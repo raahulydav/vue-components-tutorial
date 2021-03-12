@@ -1,13 +1,4 @@
-Vue.component('plan-picker', {
-  template: '#plan-picker-template',
-  data() {
-    return {
-      plans: ['the curious', 'the single', 'the addict']
-    };
-  }
-});
-
-Vue.component('plan', {
+const planComponent = {
   template: '#plan-template',
   props: {
     name: {
@@ -15,17 +6,33 @@ Vue.component('plan', {
       required: true
     }
   }
-});
+};
 
-Vue.component('click-counter', {
+const planPickerComponent = {
+  template: '#plan-picker-template',
+  components: {
+    plan: planComponent
+  },
+  data() {
+    return {
+      plans: ['the curious', 'the single', 'the addict']
+    };
+  }
+};
+
+const clickCounterComponent = {
   template: '#click-counter-template',
   data() {
     return {
       count: 0
     };
   }
-});
+};
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  components: {
+    'plan-picker': planPickerComponent,
+    'click-counter': clickCounterComponent
+  }
 });
