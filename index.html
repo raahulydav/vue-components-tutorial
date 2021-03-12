@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
     <title>components-tutorial</title>
   </head>
 
@@ -9,7 +10,6 @@
     <div id="app">
       <h2>components-tutorial</h2>
       <plan-picker></plan-picker>
-      <click-counter></click-counter>
     </div>
   </body>
 
@@ -17,12 +17,12 @@
 
   <script type="text/x-template" id="plan-picker-template">
     <div class="plans">
-        <plan v-for="plan in plans" :name="plan"></plan>
+        <plan v-for="plan in plans" :name="plan" @planSelect ="selectPlan"></plan>
     </div>
   </script>
 
   <script type="text/x-template" id="plan-template">
-    <div class="plans">
+    <div class="plan" @click="select" :class="{'active-plan': selected}">
         <div class="description">
             <span class="title">
                 {{name}}

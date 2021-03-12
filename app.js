@@ -5,6 +5,17 @@ const planComponent = {
       type: String,
       required: true
     }
+  },
+  data() {
+    return {
+      selected: false
+    };
+  },
+  methods: {
+    select() {
+      this.$emit('planSelect', this.name);
+      this.selected = true;
+    }
   }
 };
 
@@ -15,8 +26,14 @@ const planPickerComponent = {
   },
   data() {
     return {
-      plans: ['the curious', 'the single', 'the addict']
+      plans: ['the curious', 'the single', 'the addict'],
+      selectedPlan: null
     };
+  },
+  methods: {
+    selectPlan(plan) {
+      this.selectedPlan = plan;
+    }
   }
 };
 

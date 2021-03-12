@@ -1,0 +1,9 @@
+.active-plan {
+  border-color: greenyellow;
+}
+
+.plan {
+  padding: 5px;
+  margin: 20px;
+  border-style: solid;
+}
