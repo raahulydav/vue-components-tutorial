@@ -4,17 +4,19 @@ const planComponent = {
     name: {
       type: String,
       required: true
+    },
+    selectedPlan: {
+      type: String
     }
   },
-  data() {
-    return {
-      selected: false
-    };
+  computed: {
+    isSelected() {
+      return this.name === this.selectedPlan;
+    }
   },
   methods: {
     select() {
-      this.$emit('planSelect', this.name);
-      this.selected = true;
+      this.$emit('select', this.name);
     }
   }
 };
