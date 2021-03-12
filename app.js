@@ -1,3 +1,13 @@
+Vue.component('plan', {
+  template: '#plan-template',
+  props: {
+    name: {
+      type: String,
+      required: true
+    }
+  }
+});
+
 Vue.component('click-counter', {
   template: '#click-counter-template',
   data() {
@@ -8,5 +18,8 @@ Vue.component('click-counter', {
 });
 
 new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    plans: ['the curious', 'the single', 'the addict']
+  }
 });

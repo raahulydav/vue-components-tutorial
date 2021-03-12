@@ -8,17 +8,29 @@
   <body>
     <div id="app">
       <h2>components-tutorial</h2>
-      <click-counter></click-counter>
-      <click-counter></click-counter>
-      <click-counter></click-counter>
+      <div class="coffee plans">
+        <plan v-for="plan in plans" :name="plan"></plan>
+      </div>
     </div>
   </body>
+
   <script src="https://unpkg.com/vue"></script>
+  <script src="app.js"></script>
+
+  <script type="text/x-template" id="plan-template">
+    <div class="plans">
+        <div class="description">
+            <span class="title">
+                {{name}}
+            </span>
+        </div>
+    </div>
+  </script>
+
   <script type="text/x-template" id="click-counter-template">
     <div>
         <p>count is: </p>
         <button @click = "count++">{{count}}</button>
     </div>
   </script>
-  <script src="app.js"></script>
 </html>
