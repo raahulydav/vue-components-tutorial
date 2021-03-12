@@ -1,3 +1,12 @@
+Vue.component('plan-picker', {
+  template: '#plan-picker-template',
+  data() {
+    return {
+      plans: ['the curious', 'the single', 'the addict']
+    };
+  }
+});
+
 Vue.component('plan', {
   template: '#plan-template',
   props: {
@@ -18,8 +27,5 @@ Vue.component('click-counter', {
 });
 
 new Vue({
-  el: '#app',
-  data: {
-    plans: ['the curious', 'the single', 'the addict']
-  }
+  el: '#app'
 });
